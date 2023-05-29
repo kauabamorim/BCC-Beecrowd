@@ -7,7 +7,7 @@ public class App {
         String[] nomes = new String[10];
 
         for (int i = 0; i < 10; i++) {
-            nomes[i] = scanner.next();    
+            nomes[i] = scanner.next();     
         }
 
         System.out.println(nomes[2]);
