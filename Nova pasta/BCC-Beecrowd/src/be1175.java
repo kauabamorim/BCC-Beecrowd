@@ -4,17 +4,33 @@ public class be1175 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int n[] = new int[20];
-        int count = 0;
+        // declaração
+        int N[] = new int[20];
 
-        for (int i = 0; i < n.length; i++) {
-            n[i] = scanner.nextInt();
-        }
+        // populando
+        for (int i = 0; i < 20; i++)
+            N[i] = scanner.nextInt();
+        
+        // trocando
+        inverteVetor(N);
 
-        for (int i = 19; i >= 0; i--) { 
-            System.out.println("N[" + count + "] = " + n[i]);
-            count++;
-        }
+        // listando
+        imprimeVetor(N);
+
         scanner.close();
     }
+
+        public static void inverteVetor(int[] vetor) {
+            int tamanho = vetor.length;
+            for (int i = 0; i < tamanho / 2; i++) {
+                int temp = vetor[i];
+                vetor[i] = vetor[tamanho - 1 - i];
+                vetor[tamanho - 1 - i] = temp;
+            }
+        }
+
+        public static void imprimeVetor(int[] vetor) {
+            for (int i = 0; i < vetor.length; i++)
+                System.out.println("N[" + i + "] = " + vetor[i]);
+        }
 }
